@@ -1,7 +1,7 @@
 import jieba
 from common import Common
 
-with open('cn_stopwords.txt', 'r', encoding='utf-8') as f:
+with open('data/cn_stopwords.txt', 'r', encoding='utf-8') as f:
     stop_words = set([line.strip() for line in f.readlines()])
 
 
@@ -18,13 +18,12 @@ def clean_and_filter(text):
 
 
 # 读取原始txt文件
-input_file = 'trainKey.txt'
-output_file = 'trainKeyCleaned.txt'
+input_file = 'data/trainKey.txt'
+output_file = 'data/trainKeyCleaned.txt'
 
 with open(input_file, 'r', encoding='utf-8') as infile, \
         open(output_file, 'w', encoding='utf-8') as outfile:
     for line in infile:
         cleaned_line, has_keyword = clean_and_filter(line.strip())
         if has_keyword:  # 只保存含有关键词的行
-            print(cleaned_line)
             outfile.write(cleaned_line + '\n')

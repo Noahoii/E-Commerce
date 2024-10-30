@@ -9,8 +9,8 @@ def clean_query(query):
         return query
 
 
-with open("data.txt", 'r', encoding='utf-8', errors='replace') as infile, \
-        open("trainKey.txt", 'w', encoding='utf-8', newline='') as test:
+with open("data/data.txt", 'r', encoding='utf-8', errors='replace') as infile, \
+        open("data/trainKey.txt", 'w', encoding='utf-8', newline='') as test:
 
     count = 0
     for line in infile:

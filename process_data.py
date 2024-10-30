@@ -9,7 +9,7 @@ def process_data():
         print("清空processed_data文件内容")
         # 写入表头
         file.write("keyword, count, age, gender, education, search_id\n")
-    with open('data.txt', 'r', encoding='utf-8') as file:
+    with open('data/data.txt', 'r', encoding='utf-8') as file:
         line_num = 1
         for line in file:
             line_num += 1
